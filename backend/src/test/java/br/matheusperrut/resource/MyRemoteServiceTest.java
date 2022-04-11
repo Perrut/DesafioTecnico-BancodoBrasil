@@ -1,4 +1,4 @@
-package br.matheusperrut;
+package br.matheusperrut.resource;
 
 import io.quarkus.test.junit.QuarkusTest;
 
