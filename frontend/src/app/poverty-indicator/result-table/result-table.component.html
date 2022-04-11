@@ -1,0 +1,39 @@
+<div class="mat-elevation-z8 result-table-container">
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="countryiso3code">
+            <th mat-header-cell *matHeaderCellDef> Countryiso3code. </th>
+            <td mat-cell *matCellDef="let element"> {{element.countryiso3code}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> Date </th>
+            <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="value">
+            <th mat-header-cell *matHeaderCellDef> Value </th>
+            <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="unit">
+            <th mat-header-cell *matHeaderCellDef> Unit </th>
+            <td mat-cell *matCellDef="let element"> {{element.unit}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="obs_status">
+            <th mat-header-cell *matHeaderCellDef> Obs. Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.obs_status}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="decimal">
+            <th mat-header-cell *matHeaderCellDef> Decimal </th>
+            <td mat-cell *matCellDef="let element"> {{element.decimal}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" (page)="onPage($event)" showFirstLastButtons></mat-paginator>
+</div>

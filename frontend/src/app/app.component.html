@@ -1,0 +1,7 @@
+<h1 class="title">Poverty Indicator per Country</h1>
+<h3 class="subtitle">Fill the form with a Country code to get info about percentage of people that leave with under $1,90 per day</h3>
+<app-search-form (search)="executeSearch($event)"></app-search-form>
+<app-result-table [tableData]="tableData" [totalRows]="totalRows" (page)="onPage($event)"></app-result-table>
+<div *ngIf="isLoading" class="loader">
+    <mat-spinner></mat-spinner>
+</div>
