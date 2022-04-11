@@ -1,4 +1,4 @@
-package org.acme;
+package br.matheusperrut;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 
