@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { PovertyIndicatorModule } from '../poverty-indicator.module';
 
 import { SearchFormComponent } from './search-form.component';
 
@@ -8,7 +10,10 @@ describe('SearchFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchFormComponent ]
+      imports: [ 
+        PovertyIndicatorModule,
+        NoopAnimationsModule
+      ]
     })
     .compileComponents();
   }));

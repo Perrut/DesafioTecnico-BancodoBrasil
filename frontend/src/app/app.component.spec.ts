@@ -1,12 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { AppModule } from './app.module';
+
+class HttpClientMock {
+
+}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+      imports: [
+        AppModule
       ],
+      providers: [
+        { provide: HttpClient, useClass: HttpClientMock }
+      ]
     }).compileComponents();
   }));
 
@@ -20,12 +29,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('frontend');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('frontend app is running!');
   });
 });
