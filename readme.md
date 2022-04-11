@@ -15,6 +15,7 @@ Na pasta backend, executar o comando para gerar o artefato do projeto:
 - `mvnw clean package`
 
 ### Frontend e backend juntos (geração de imagens)
+
 Executar o comando:
 - `docker-compose build` na pasta raíz do projeto para montar as imagens
 
