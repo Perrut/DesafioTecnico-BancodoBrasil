@@ -1,0 +1,9 @@
+<div class="search-form-container">
+    <form #form="ngForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Country code</mat-label>
+            <input matInput [formControl]="countryCode">
+        </mat-form-field>
+        <button [disabled]="!countryCode.valid" mat-raised-button color="primary">Search</button>
+    </form>
+</div>
