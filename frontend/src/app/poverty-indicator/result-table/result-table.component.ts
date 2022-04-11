@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { PovertyIndicator } from '../models/poverty-indicator-2';
+import { PovertyIndicator } from '../models/poverty-indicator';
 
 @Component({
   selector: 'app-result-table',

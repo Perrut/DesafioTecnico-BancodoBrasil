@@ -1,5 +1,5 @@
 import { Pagination } from "./pagination";
-import { PovertyIndicator } from "./poverty-indicator-2";
+import { PovertyIndicator } from "./poverty-indicator";
 
 export interface SearchResults {
     pagination: Pagination;

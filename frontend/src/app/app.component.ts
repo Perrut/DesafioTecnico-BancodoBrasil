@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { PovertyIndicator } from './poverty-indicator/models/poverty-indicator-2';
+import { PovertyIndicator } from './poverty-indicator/models/poverty-indicator';
 import { ResultTableComponent } from './poverty-indicator/result-table/result-table.component';
 import { IndicatorSearchService } from './poverty-indicator/services/indicator-search.service';
 
@@ -23,6 +23,7 @@ export class AppComponent {
   constructor(private indicatorSearchService: IndicatorSearchService, private snackBar: MatSnackBar) { }
 
   executeSearch(search: string) {
+    this.resultTable.paginator.firstPage();
     this.countryCode = search;
     this.updateTable();
   }

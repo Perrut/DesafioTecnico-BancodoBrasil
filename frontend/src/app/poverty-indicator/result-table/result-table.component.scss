@@ -1,10 +1,12 @@
 :host {
     display: flex;
     padding: 0 80px;
+    justify-content: center;
 }
 
 .result-table-container {
     width: 100%;
+    max-width: 1080px;
 
     table {
         width: 100%;
