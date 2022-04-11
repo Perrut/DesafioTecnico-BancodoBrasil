@@ -1,4 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { PovertyIndicator } from './poverty-indicator/models/poverty-indicator-2';
 import { ResultTableComponent } from './poverty-indicator/result-table/result-table.component';
@@ -14,6 +15,7 @@ export class AppComponent {
 
   countryCode: string;
   tableData: PovertyIndicator[] = [];
+  totalRows = 0;
   isLoading = false;
 
   @ViewChild(ResultTableComponent) resultTable: ResultTableComponent;
@@ -25,11 +27,13 @@ export class AppComponent {
     this.updateTable();
   }
 
-  updateTable(page = 1, perPage = 10) {
+  updateTable(page = 1) {
+    const perPage = this.resultTable.paginator.pageSize;
     this.isLoading = true;
     this.indicatorSearchService.getPovertyIndicators(this.countryCode, page, perPage)
       .subscribe(data => {
         this.tableData = data.povertyIndicatorList;
+        this.totalRows = data.pagination.total;
         this.isLoading = false;
       }, _ => {
         this.snackBar.open("Verify the code and try again.", 'Close', {
@@ -37,5 +41,9 @@ export class AppComponent {
         });
         this.isLoading = false;
       });
+  }
+
+  onPage(page: PageEvent) {
+    this.updateTable(page.pageIndex + 1);
   }
 }

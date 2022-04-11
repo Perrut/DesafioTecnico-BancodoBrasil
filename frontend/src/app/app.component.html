@@ -1,5 +1,5 @@
 <app-search-form (search)="executeSearch($event)"></app-search-form>
-<app-result-table [tableData]="tableData"></app-result-table>
+<app-result-table [tableData]="tableData" [totalRows]="totalRows" (page)="onPage($event)"></app-result-table>
 <div *ngIf="isLoading" class="loader">
     <mat-spinner></mat-spinner>
 </div>
